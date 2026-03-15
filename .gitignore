@@ -1,0 +1,48 @@
+# macOS
+.DS_Store
+
+# Local build secrets
+.env
+
+# Xcode user data
+xcuserdata/
+**/xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Xcode build output
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# CocoaPods / Carthage / third-party build products
+Pods/
+Carthage/Build/
+
+# XcodeGen local artifacts
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# Test and coverage output
+*.xcresult
+coverage/
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo

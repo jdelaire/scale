@@ -1,0 +1,72 @@
+name: S400Scale
+options:
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+    PRODUCT_NAME: S400Scale
+    SUPPORTS_MACCATALYST: NO
+    TARGETED_DEVICE_FAMILY: 1
+    DEVELOPMENT_TEAM: UQGLLZNWC2
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: YES
+    STRING_CATALOG_GENERATE_SYMBOLS: YES
+targets:
+  S400Scale:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    preBuildScripts:
+      - name: Generate Build Secrets
+        script: |
+          "${SRCROOT}/scripts/generate_build_secrets.sh"
+        inputFiles:
+          - $(SRCROOT)/.env
+          - $(SRCROOT)/scripts/generate_build_secrets.sh
+        outputFiles:
+          - $(SRCROOT)/S400Scale/Generated/BuildSecrets.swift
+    sources:
+      - path: S400Scale
+        excludes:
+          - Docs
+    info:
+      path: S400Scale/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Scale
+        UILaunchScreen: {}
+        UIRequiresFullScreen: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+          - UIInterfaceOrientationPortraitUpsideDown
+        "UISupportedInterfaceOrientations~ipad":
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIApplicationSupportsIndirectInputEvents: true
+        NSBluetoothAlwaysUsageDescription: This app scans for Xiaomi S400 BLE advertisements and decodes measurements locally on your device.
+        NSHealthShareUsageDescription: This app reads your Health permissions status to export finalized scale measurements.
+        NSHealthUpdateUsageDescription: This app writes finalized weight and body composition estimates to Apple Health when you allow it.
+    entitlements:
+      path: S400Scale/Resources/S400Scale.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jdelaire.S400Scale
+        GENERATE_INFOPLIST_FILE: NO
+  S400ScaleTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: S400ScaleTests
+    dependencies:
+      - target: S400Scale
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jdelaire.S400ScaleTests
+        PRODUCT_NAME: S400ScaleTests
+        GENERATE_INFOPLIST_FILE: YES

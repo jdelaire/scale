@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11F89DFAC3F3FF6D57EB203F /* S400ScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DE182C539AFE6F99751DD1 /* S400ScannerService.swift */; };
+		1C242345555FB9229C79CE40 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A31C80BB09354E9450FE18 /* DebugView.swift */; };
+		2DB3F357670F53665964989F /* MeasurementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C0614741BA389A0E8E1A8D /* MeasurementEntity.swift */; };
+		2E7222A44F47189A69F6FFE9 /* S400PacketDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228B4C66A9B9BC48E43F8C8 /* S400PacketDecoder.swift */; };
+		3133BA3F643B2605B40836B0 /* S400AdvertisementPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A47F34D9B9194FD9A8C395 /* S400AdvertisementPacket.swift */; };
+		3A57C253BA7A821AC588E572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F975B584AACA89226A74C0 /* Assets.xcassets */; };
+		40B5EF664515F35771A60D0F /* BiologicalSex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C418406D2B5BD560CF1EC6EE /* BiologicalSex.swift */; };
+		40BEE2BF431935B374651DB4 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23C2F8F0A6955775B039669 /* UserProfile.swift */; };
+		606A9B8D042801F9A2865EF1 /* MiBeaconCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B5C3029A08459428EBA84E /* MiBeaconCrypto.swift */; };
+		7B4CF17C2EFB0D5E7F96DFD8 /* MeasurementPersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D5DC6FB780A939954B8D4 /* MeasurementPersistenceController.swift */; };
+		7C6210CCF5E2D1BE99DA85C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEFE9098EC1F22F8B25A450 /* ContentView.swift */; };
+		8176D237EE838F4EFDDD37F2 /* BodyCompositionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C50C60491566423C3E835 /* BodyCompositionCalculator.swift */; };
+		848EF224C4FBEFAEAF6AAE6F /* DebugPacketRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A6BD31143B85B89EB48B2 /* DebugPacketRecord.swift */; };
+		8D02B70767CA2451E8401C60 /* S400PacketDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F0815C2EF532EDEF16F0F3 /* S400PacketDecoderTests.swift */; };
+		8E371519DCD949FB9AA719A0 /* BluetoothAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5572DE1769BB1693E4FA5EE /* BluetoothAddress.swift */; };
+		91630AF0E6844C3A45FBB0C4 /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D61C3F70135B9AD87ADC2 /* Data+Hex.swift */; };
+		94C0143DCE755E4613FE7B35 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267AED035353E2223A65E056 /* AppModel.swift */; };
+		BA245FE0329F47205130AEC5 /* BodyCompositionEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED413CBA5D567868A0295FF /* BodyCompositionEstimate.swift */; };
+		BC3C4DB461B10D5DED6DEC04 /* AppModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F2A34D25B4F99F639F99 /* AppModelTests.swift */; };
+		BDE9549F81AC8FE02C901378 /* AppSettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7174AD94F696581B3B7A46 /* AppSettingsStoreTests.swift */; };
+		C00A3C3AC8DEC6F52DF8DF9A /* ScaleMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACC9697333F2376E36B073 /* ScaleMeasurement.swift */; };
+		C0B8C6790FA384C6D739565E /* HealthKitExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFC01C84693F133B24FCD5F /* HealthKitExporter.swift */; };
+		C193629350EB365D52B67510 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C271DC6B92B0205ADF62B /* AppSettingsStore.swift */; };
+		C97CE4B10CFA195494858A2C /* StoredMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC7B762310065807EE83845 /* StoredMeasurement.swift */; };
+		C9E2D46DC6026C2EF3ECF2F1 /* S400MeasurementAggregatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D917D52B4F11EA0A34CE96B9 /* S400MeasurementAggregatorTests.swift */; };
+		CAE8001E3C90445E7E117199 /* BuildSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B496F12C11A634866CFA53 /* BuildSecrets.swift */; };
+		DC846B70A52BAB033FA5EBEF /* S400ScaleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077828A834F413007819A905 /* S400ScaleApp.swift */; };
+		DFFD02B56459E8A853458291 /* MeasurementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0543014AECDE13992DB7B5CA /* MeasurementStore.swift */; };
+		E0B0500F5BD2A53DC513197D /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD77BA8CA5E8A81A8F958E9 /* DashboardView.swift */; };
+		F38AC10BBDC04F014DD34723 /* BinaryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAA6527E27345EE79876644 /* BinaryReader.swift */; };
+		F54D7BE6FA1872842755B81A /* S400MeasurementAggregator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5E9F4F22DBF132D5BB05AF /* S400MeasurementAggregator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C7463C13B6E7A953B7A7C86A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0783A708AF6B57C837555572 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20BD049B3C9DF4E315F07E2B;
+			remoteInfo = S400Scale;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04280BF067674CA6135BE648 /* S400ScaleTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = S400ScaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0543014AECDE13992DB7B5CA /* MeasurementStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementStore.swift; sourceTree = "<group>"; };
+		06A47F34D9B9194FD9A8C395 /* S400AdvertisementPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S400AdvertisementPacket.swift; sourceTree = "<group>"; };
+		077828A834F413007819A905 /* S400ScaleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S400ScaleApp.swift; sourceTree = "<group>"; };
+		10B5C3029A08459428EBA84E /* MiBeaconCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiBeaconCrypto.swift; sourceTree = "<group>"; };
+		1CDF0CA098861769557C8B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		21DE182C539AFE6F99751DD1 /* S400ScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S400ScannerService.swift; sourceTree = "<group>"; };
+		267AED035353E2223A65E056 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		2ED413CBA5D567868A0295FF /* BodyCompositionEstimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyCompositionEstimate.swift; sourceTree = "<group>"; };
+		31F975B584AACA89226A74C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38DD9923739BE4E8DAEA0959 /* S400Scale.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = S400Scale.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		430D5DC6FB780A939954B8D4 /* MeasurementPersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementPersistenceController.swift; sourceTree = "<group>"; };
+		56ACC9697333F2376E36B073 /* ScaleMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleMeasurement.swift; sourceTree = "<group>"; };
+		5FD77BA8CA5E8A81A8F958E9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		6C6CF182F8F77629BB0DB0C3 /* S400Scale.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = S400Scale.entitlements; sourceTree = "<group>"; };
+		77A31C80BB09354E9450FE18 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
+		7A5E9F4F22DBF132D5BB05AF /* S400MeasurementAggregator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S400MeasurementAggregator.swift; sourceTree = "<group>"; };
+		8231F2A34D25B4F99F639F99 /* AppModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelTests.swift; sourceTree = "<group>"; };
+		834A6BD31143B85B89EB48B2 /* DebugPacketRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPacketRecord.swift; sourceTree = "<group>"; };
+		89B496F12C11A634866CFA53 /* BuildSecrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildSecrets.swift; sourceTree = "<group>"; };
+		8EEFE9098EC1F22F8B25A450 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A30C50C60491566423C3E835 /* BodyCompositionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyCompositionCalculator.swift; sourceTree = "<group>"; };
+		A90D61C3F70135B9AD87ADC2 /* Data+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
+		B228B4C66A9B9BC48E43F8C8 /* S400PacketDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S400PacketDecoder.swift; sourceTree = "<group>"; };
+		C418406D2B5BD560CF1EC6EE /* BiologicalSex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiologicalSex.swift; sourceTree = "<group>"; };
+		CB7174AD94F696581B3B7A46 /* AppSettingsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStoreTests.swift; sourceTree = "<group>"; };
+		CBAA6527E27345EE79876644 /* BinaryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryReader.swift; sourceTree = "<group>"; };
+		CFC7B762310065807EE83845 /* StoredMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredMeasurement.swift; sourceTree = "<group>"; };
+		D07C271DC6B92B0205ADF62B /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
+		D23C2F8F0A6955775B039669 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		D3F0815C2EF532EDEF16F0F3 /* S400PacketDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S400PacketDecoderTests.swift; sourceTree = "<group>"; };
+		D917D52B4F11EA0A34CE96B9 /* S400MeasurementAggregatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S400MeasurementAggregatorTests.swift; sourceTree = "<group>"; };
+		E5572DE1769BB1693E4FA5EE /* BluetoothAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothAddress.swift; sourceTree = "<group>"; };
+		E9C0614741BA389A0E8E1A8D /* MeasurementEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementEntity.swift; sourceTree = "<group>"; };
+		FEFC01C84693F133B24FCD5F /* HealthKitExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitExporter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		193C44077F165A191500FC00 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				89B496F12C11A634866CFA53 /* BuildSecrets.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		294C7FE5663BE737997188E0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				267AED035353E2223A65E056 /* AppModel.swift */,
+				077828A834F413007819A905 /* S400ScaleApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		39B9B5BB806F66DA34F9AFE3 /* MeasurementStore */ = {
+			isa = PBXGroup;
+			children = (
+				E9C0614741BA389A0E8E1A8D /* MeasurementEntity.swift */,
+				430D5DC6FB780A939954B8D4 /* MeasurementPersistenceController.swift */,
+				0543014AECDE13992DB7B5CA /* MeasurementStore.swift */,
+			);
+			path = MeasurementStore;
+			sourceTree = "<group>";
+		};
+		3B5945971FE0718312C89175 /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				7A5E9F4F22DBF132D5BB05AF /* S400MeasurementAggregator.swift */,
+				21DE182C539AFE6F99751DD1 /* S400ScannerService.swift */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
+		5CD577B3764D3A5F5DA8F706 /* HealthKitExporter */ = {
+			isa = PBXGroup;
+			children = (
+				FEFC01C84693F133B24FCD5F /* HealthKitExporter.swift */,
+			);
+			path = HealthKitExporter;
+			sourceTree = "<group>";
+		};
+		6B5489FF8963EE94446A1EA0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8EEFE9098EC1F22F8B25A450 /* ContentView.swift */,
+				5FD77BA8CA5E8A81A8F958E9 /* DashboardView.swift */,
+				77A31C80BB09354E9450FE18 /* DebugView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8586A49DFD7422634651D512 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38DD9923739BE4E8DAEA0959 /* S400Scale.app */,
+				04280BF067674CA6135BE648 /* S400ScaleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86C78EFAF4541F93AB3A5A93 /* BodyCompositionCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				A30C50C60491566423C3E835 /* BodyCompositionCalculator.swift */,
+			);
+			path = BodyCompositionCalculator;
+			sourceTree = "<group>";
+		};
+		9B32A1D30DA0E7C472C3391F /* S400ScaleTests */ = {
+			isa = PBXGroup;
+			children = (
+				8231F2A34D25B4F99F639F99 /* AppModelTests.swift */,
+				CB7174AD94F696581B3B7A46 /* AppSettingsStoreTests.swift */,
+				D917D52B4F11EA0A34CE96B9 /* S400MeasurementAggregatorTests.swift */,
+				D3F0815C2EF532EDEF16F0F3 /* S400PacketDecoderTests.swift */,
+			);
+			path = S400ScaleTests;
+			sourceTree = "<group>";
+		};
+		AB7152DEE630F306C732FA25 /* MeasurementModel */ = {
+			isa = PBXGroup;
+			children = (
+				D07C271DC6B92B0205ADF62B /* AppSettingsStore.swift */,
+				C418406D2B5BD560CF1EC6EE /* BiologicalSex.swift */,
+				2ED413CBA5D567868A0295FF /* BodyCompositionEstimate.swift */,
+				834A6BD31143B85B89EB48B2 /* DebugPacketRecord.swift */,
+				06A47F34D9B9194FD9A8C395 /* S400AdvertisementPacket.swift */,
+				56ACC9697333F2376E36B073 /* ScaleMeasurement.swift */,
+				CFC7B762310065807EE83845 /* StoredMeasurement.swift */,
+				D23C2F8F0A6955775B039669 /* UserProfile.swift */,
+			);
+			path = MeasurementModel;
+			sourceTree = "<group>";
+		};
+		BE25B274853CE460B1A96B5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				31F975B584AACA89226A74C0 /* Assets.xcassets */,
+				1CDF0CA098861769557C8B65 /* Info.plist */,
+				6C6CF182F8F77629BB0DB0C3 /* S400Scale.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C3FF9668F0513C88EE9BE3C0 /* S400Scale */ = {
+			isa = PBXGroup;
+			children = (
+				294C7FE5663BE737997188E0 /* App */,
+				3B5945971FE0718312C89175 /* BLE */,
+				86C78EFAF4541F93AB3A5A93 /* BodyCompositionCalculator */,
+				193C44077F165A191500FC00 /* Generated */,
+				5CD577B3764D3A5F5DA8F706 /* HealthKitExporter */,
+				AB7152DEE630F306C732FA25 /* MeasurementModel */,
+				39B9B5BB806F66DA34F9AFE3 /* MeasurementStore */,
+				BE25B274853CE460B1A96B5D /* Resources */,
+				E5C2113E107C404A0437D83E /* ScalePacketDecoder */,
+				6B5489FF8963EE94446A1EA0 /* UI */,
+			);
+			path = S400Scale;
+			sourceTree = "<group>";
+		};
+		CD8EA8580E4A2D65BC76A08A = {
+			isa = PBXGroup;
+			children = (
+				C3FF9668F0513C88EE9BE3C0 /* S400Scale */,
+				9B32A1D30DA0E7C472C3391F /* S400ScaleTests */,
+				8586A49DFD7422634651D512 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E5C2113E107C404A0437D83E /* ScalePacketDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				CBAA6527E27345EE79876644 /* BinaryReader.swift */,
+				E5572DE1769BB1693E4FA5EE /* BluetoothAddress.swift */,
+				A90D61C3F70135B9AD87ADC2 /* Data+Hex.swift */,
+				10B5C3029A08459428EBA84E /* MiBeaconCrypto.swift */,
+				B228B4C66A9B9BC48E43F8C8 /* S400PacketDecoder.swift */,
+			);
+			path = ScalePacketDecoder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20BD049B3C9DF4E315F07E2B /* S400Scale */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F1FD37DD0EF087B743F8597 /* Build configuration list for PBXNativeTarget "S400Scale" */;
+			buildPhases = (
+				697ED42F8A5C305542E1D65E /* Generate Build Secrets */,
+				1D33C1CEB848E208964467F2 /* Sources */,
+				94D33B16DB0FF587201AFEB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = S400Scale;
+			packageProductDependencies = (
+			);
+			productName = S400Scale;
+			productReference = 38DD9923739BE4E8DAEA0959 /* S400Scale.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ACA8A066E1AA181C25E02A9F /* S400ScaleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 633177DA45BAF50D78E96E07 /* Build configuration list for PBXNativeTarget "S400ScaleTests" */;
+			buildPhases = (
+				7B5F3B95D247E84CF80BFFCF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90657B675B9B9A292441F1FB /* PBXTargetDependency */,
+			);
+			name = S400ScaleTests;
+			packageProductDependencies = (
+			);
+			productName = S400ScaleTests;
+			productReference = 04280BF067674CA6135BE648 /* S400ScaleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0783A708AF6B57C837555572 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					20BD049B3C9DF4E315F07E2B = {
+						DevelopmentTeam = UQGLLZNWC2;
+					};
+					ACA8A066E1AA181C25E02A9F = {
+						DevelopmentTeam = UQGLLZNWC2;
+					};
+				};
+			};
+			buildConfigurationList = 6E3461D483A4669838EBBE8F /* Build configuration list for PBXProject "S400Scale" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CD8EA8580E4A2D65BC76A08A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20BD049B3C9DF4E315F07E2B /* S400Scale */,
+				ACA8A066E1AA181C25E02A9F /* S400ScaleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94D33B16DB0FF587201AFEB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A57C253BA7A821AC588E572 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		697ED42F8A5C305542E1D65E /* Generate Build Secrets */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.env",
+				"$(SRCROOT)/scripts/generate_build_secrets.sh",
+			);
+			name = "Generate Build Secrets";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/S400Scale/Generated/BuildSecrets.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/scripts/generate_build_secrets.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D33C1CEB848E208964467F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94C0143DCE755E4613FE7B35 /* AppModel.swift in Sources */,
+				C193629350EB365D52B67510 /* AppSettingsStore.swift in Sources */,
+				F38AC10BBDC04F014DD34723 /* BinaryReader.swift in Sources */,
+				40B5EF664515F35771A60D0F /* BiologicalSex.swift in Sources */,
+				8E371519DCD949FB9AA719A0 /* BluetoothAddress.swift in Sources */,
+				8176D237EE838F4EFDDD37F2 /* BodyCompositionCalculator.swift in Sources */,
+				BA245FE0329F47205130AEC5 /* BodyCompositionEstimate.swift in Sources */,
+				CAE8001E3C90445E7E117199 /* BuildSecrets.swift in Sources */,
+				7C6210CCF5E2D1BE99DA85C8 /* ContentView.swift in Sources */,
+				E0B0500F5BD2A53DC513197D /* DashboardView.swift in Sources */,
+				91630AF0E6844C3A45FBB0C4 /* Data+Hex.swift in Sources */,
+				848EF224C4FBEFAEAF6AAE6F /* DebugPacketRecord.swift in Sources */,
+				1C242345555FB9229C79CE40 /* DebugView.swift in Sources */,
+				C0B8C6790FA384C6D739565E /* HealthKitExporter.swift in Sources */,
+				2DB3F357670F53665964989F /* MeasurementEntity.swift in Sources */,
+				7B4CF17C2EFB0D5E7F96DFD8 /* MeasurementPersistenceController.swift in Sources */,
+				DFFD02B56459E8A853458291 /* MeasurementStore.swift in Sources */,
+				606A9B8D042801F9A2865EF1 /* MiBeaconCrypto.swift in Sources */,
+				3133BA3F643B2605B40836B0 /* S400AdvertisementPacket.swift in Sources */,
+				F54D7BE6FA1872842755B81A /* S400MeasurementAggregator.swift in Sources */,
+				2E7222A44F47189A69F6FFE9 /* S400PacketDecoder.swift in Sources */,
+				DC846B70A52BAB033FA5EBEF /* S400ScaleApp.swift in Sources */,
+				11F89DFAC3F3FF6D57EB203F /* S400ScannerService.swift in Sources */,
+				C00A3C3AC8DEC6F52DF8DF9A /* ScaleMeasurement.swift in Sources */,
+				C97CE4B10CFA195494858A2C /* StoredMeasurement.swift in Sources */,
+				40BEE2BF431935B374651DB4 /* UserProfile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B5F3B95D247E84CF80BFFCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC3C4DB461B10D5DED6DEC04 /* AppModelTests.swift in Sources */,
+				BDE9549F81AC8FE02C901378 /* AppSettingsStoreTests.swift in Sources */,
+				C9E2D46DC6026C2EF3ECF2F1 /* S400MeasurementAggregatorTests.swift in Sources */,
+				8D02B70767CA2451E8401C60 /* S400PacketDecoderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		90657B675B9B9A292441F1FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20BD049B3C9DF4E315F07E2B /* S400Scale */;
+			targetProxy = C7463C13B6E7A953B7A7C86A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3202B8314D8114271077B45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = S400Scale/Resources/S400Scale.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = S400Scale/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jdelaire.S400Scale;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		39295857D28027F024292DDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = S400Scale/Resources/S400Scale.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = S400Scale/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jdelaire.S400Scale;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6B4D3C6BF6DB3A674D829ADA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jdelaire.S400ScaleTests;
+				PRODUCT_NAME = S400ScaleTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/S400Scale.app/S400Scale";
+			};
+			name = Debug;
+		};
+		B8E8151D90AF90F5C01EC133 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jdelaire.S400ScaleTests;
+				PRODUCT_NAME = S400ScaleTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/S400Scale.app/S400Scale";
+			};
+			name = Release;
+		};
+		BD1CD58A00FB5446D0B43F55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UQGLLZNWC2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = S400Scale;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FCA1DCF4551ECE36A542B3CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UQGLLZNWC2;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = S400Scale;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		633177DA45BAF50D78E96E07 /* Build configuration list for PBXNativeTarget "S400ScaleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B4D3C6BF6DB3A674D829ADA /* Debug */,
+				B8E8151D90AF90F5C01EC133 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6E3461D483A4669838EBBE8F /* Build configuration list for PBXProject "S400Scale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD1CD58A00FB5446D0B43F55 /* Debug */,
+				FCA1DCF4551ECE36A542B3CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9F1FD37DD0EF087B743F8597 /* Build configuration list for PBXNativeTarget "S400Scale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3202B8314D8114271077B45E /* Debug */,
+				39295857D28027F024292DDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0783A708AF6B57C837555572 /* Project object */;
+}
