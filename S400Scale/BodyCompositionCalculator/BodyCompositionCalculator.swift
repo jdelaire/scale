@@ -18,11 +18,21 @@ enum BodyCompositionCalculator {
         }
 
         let sex = profile.sex
+        let rawCalibration = profile.bodyCompositionMode == .personal
+            ? profile.bodyCompositionCalibration
+            : BodyCompositionCalibration()
+        let calibration = BodyCompositionCalibration(
+            fatPercentageOffset: min(max(rawCalibration.fatPercentageOffset, -15), 15),
+            impedanceMultiplier: max(rawCalibration.impedanceMultiplier, 0.5),
+            leanMassMultiplier: max(rawCalibration.leanMassMultiplier, 0.5)
+        )
+        let effectiveMode: BodyCompositionMode = profile.bodyCompositionMode == .personal ? .athlete : profile.bodyCompositionMode
+        let calibratedImpedance = impedanceOhms * calibration.impedanceMultiplier
         let lbmCoefficient = leanBodyMassCoefficient(
             weightKg: weightKg,
             heightCentimeters: Double(height),
             age: Double(age),
-            impedanceOhms: impedanceOhms
+            impedanceOhms: calibratedImpedance
         )
 
         let fatPercentage = bodyFatPercentage(
@@ -30,8 +40,9 @@ enum BodyCompositionCalculator {
             heightCentimeters: Double(height),
             age: Double(age),
             sex: sex,
-            mode: profile.bodyCompositionMode,
-            lbmCoefficient: lbmCoefficient
+            mode: effectiveMode,
+            lbmCoefficient: lbmCoefficient,
+            calibration: calibration
         )
 
         let leanMass = max(weightKg * (1 - fatPercentage / 100), 0)
@@ -62,7 +73,8 @@ enum BodyCompositionCalculator {
         age: Double,
         sex: BiologicalSex,
         mode: BodyCompositionMode,
-        lbmCoefficient: Double
+        lbmCoefficient: Double,
+        calibration: BodyCompositionCalibration
     ) -> Double {
         let constant: Double
         switch (sex, age) {
@@ -87,11 +99,15 @@ enum BodyCompositionCalculator {
         }
 
         let athleteAdjustment = athleteAdjustment(for: sex, mode: mode)
-        let adjustedLbmCoefficient = lbmCoefficient * athleteAdjustment.leanMassMultiplier
+        let adjustedLbmCoefficient = lbmCoefficient
+            * athleteAdjustment.leanMassMultiplier
+            * calibration.leanMassMultiplier
         let adjustedConstant = constant + athleteAdjustment.constantOffset
         let adjustedCoefficient = coefficient * athleteAdjustment.coefficientMultiplier
 
-        let value = (1 - (((adjustedLbmCoefficient - adjustedConstant) * adjustedCoefficient) / weightKg)) * 100
+        let value =
+            ((1 - (((adjustedLbmCoefficient - adjustedConstant) * adjustedCoefficient) / weightKg)) * 100)
+            + calibration.fatPercentageOffset
         return min(max(value, 5), 75)
     }
 

@@ -1,7 +1,6 @@
 import Foundation
 
 enum BuildSecrets {
-    // Overwritten by scripts/generate_build_secrets.sh during build.
-    static let defaultBindKeyHex = ""
-    static let defaultScaleMACAddress = ""
+    static let defaultBindKeyHex = "ec093df9ba9adfa175de326f09e31317"
+    static let defaultScaleMACAddress = "CC:4D:75:D1:5D:66"
 }

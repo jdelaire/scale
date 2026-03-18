@@ -182,6 +182,39 @@ struct SettingsView: View {
                                     .pickerStyle(.segmented)
                                 }
 
+                                if model.profile.bodyCompositionMode == .personal {
+                                    ScaleField(label: "Fat Offset") {
+                                        TextField(
+                                            "0.0",
+                                            value: fatPercentageOffsetBinding(for: model),
+                                            format: .number.precision(.fractionLength(0...2))
+                                        )
+                                        .keyboardType(.numbersAndPunctuation)
+                                    }
+
+                                    ScaleField(label: "Impedance Multiplier") {
+                                        TextField(
+                                            "1.00",
+                                            value: impedanceMultiplierBinding(for: model),
+                                            format: .number.precision(.fractionLength(0...3))
+                                        )
+                                        .keyboardType(.decimalPad)
+                                    }
+
+                                    ScaleField(label: "Lean Mass Multiplier") {
+                                        TextField(
+                                            "1.00",
+                                            value: leanMassMultiplierBinding(for: model),
+                                            format: .number.precision(.fractionLength(0...3))
+                                        )
+                                        .keyboardType(.decimalPad)
+                                    }
+
+                                    Text("Personal starts from the Athlete formula, then applies your own corrections. Positive fat offset raises body-fat percentage. Lower impedance or higher lean-mass multipliers make readings leaner.")
+                                        .font(.caption)
+                                        .foregroundStyle(.tertiary)
+                                }
+
                                 ScaleField(label: "Sex") {
                                     Picker("Sex", selection: $model.profile.sex) {
                                         ForEach(BiologicalSex.allCases) { sex in
@@ -224,6 +257,27 @@ struct SettingsView: View {
         Binding(
             get: { model.profile.age ?? 30 },
             set: { model.profile.age = $0 }
+        )
+    }
+
+    private func fatPercentageOffsetBinding(for model: AppModel) -> Binding<Double> {
+        Binding(
+            get: { model.profile.bodyCompositionCalibration.fatPercentageOffset },
+            set: { model.profile.bodyCompositionCalibration.fatPercentageOffset = $0 }
+        )
+    }
+
+    private func impedanceMultiplierBinding(for model: AppModel) -> Binding<Double> {
+        Binding(
+            get: { model.profile.bodyCompositionCalibration.impedanceMultiplier },
+            set: { model.profile.bodyCompositionCalibration.impedanceMultiplier = max($0, 0.5) }
+        )
+    }
+
+    private func leanMassMultiplierBinding(for model: AppModel) -> Binding<Double> {
+        Binding(
+            get: { model.profile.bodyCompositionCalibration.leanMassMultiplier },
+            set: { model.profile.bodyCompositionCalibration.leanMassMultiplier = max($0, 0.5) }
         )
     }
 }

@@ -38,6 +38,31 @@ final class AppSettingsStoreTests: XCTestCase {
         XCTAssertEqual(loadedProfile.bindKeyHex, UserProfile.defaultBindKeyHex)
         XCTAssertEqual(loadedProfile.scaleMACAddress, UserProfile.defaultScaleMACAddress)
     }
+
+    func testLoadProfileDecodesLegacyProfileWithoutPersonalCalibration() throws {
+        let suiteName = "AppSettingsStoreTests.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suiteName)!
+        defaults.removePersistentDomain(forName: suiteName)
+
+        let legacyProfile: [String: Any] = [
+            "heightCentimeters": 180,
+            "age": 34,
+            "sex": "male",
+            "bodyCompositionMode": "athlete",
+            "bindKeyHex": "feedfacefeedfacefeedfacefeedface",
+            "scaleMACAddress": "AA:BB:CC:DD:EE:FF"
+        ]
+        let data = try JSONSerialization.data(withJSONObject: legacyProfile)
+        defaults.set(data, forKey: "s400.user-profile")
+
+        let store = AppSettingsStore(defaults: defaults)
+        let loadedProfile = store.loadProfile()
+
+        XCTAssertEqual(loadedProfile.bodyCompositionMode, .athlete)
+        XCTAssertEqual(loadedProfile.bodyCompositionCalibration, BodyCompositionCalibration())
+        XCTAssertEqual(loadedProfile.bindKeyHex, "feedfacefeedfacefeedfacefeedface")
+        XCTAssertEqual(loadedProfile.scaleMACAddress, "AA:BB:CC:DD:EE:FF")
+    }
 }
 
 final class UserProfileTests: XCTestCase {
@@ -118,5 +143,76 @@ final class UserProfileTests: XCTestCase {
             try XCTUnwrap(athleteEstimate).fatPercentage,
             try XCTUnwrap(standardEstimate).fatPercentage
         )
+    }
+
+    func testPersonalModeCanBiasEstimateTowardHigherBodyFat() throws {
+        let athleteProfile = UserProfile(
+            heightCentimeters: 180,
+            age: 34,
+            sex: .male,
+            bodyCompositionMode: .athlete
+        )
+        let personalProfile = UserProfile(
+            heightCentimeters: 180,
+            age: 34,
+            sex: .male,
+            bodyCompositionMode: .personal,
+            bodyCompositionCalibration: BodyCompositionCalibration(
+                fatPercentageOffset: 2.5,
+                impedanceMultiplier: 1,
+                leanMassMultiplier: 1
+            )
+        )
+
+        let athleteEstimate = try XCTUnwrap(
+            BodyCompositionCalculator.estimate(
+                weightKg: 78.7,
+                impedanceOhms: 423.9,
+                profile: athleteProfile
+            )
+        )
+        let personalEstimate = try XCTUnwrap(
+            BodyCompositionCalculator.estimate(
+                weightKg: 78.7,
+                impedanceOhms: 423.9,
+                profile: personalProfile
+            )
+        )
+
+        XCTAssertGreaterThan(personalEstimate.fatPercentage, athleteEstimate.fatPercentage)
+    }
+
+    func testPersonalModeWithNeutralCalibrationMatchesAthleteMode() throws {
+        let athleteProfile = UserProfile(
+            heightCentimeters: 180,
+            age: 34,
+            sex: .male,
+            bodyCompositionMode: .athlete
+        )
+        let personalProfile = UserProfile(
+            heightCentimeters: 180,
+            age: 34,
+            sex: .male,
+            bodyCompositionMode: .personal,
+            bodyCompositionCalibration: BodyCompositionCalibration()
+        )
+
+        let athleteEstimate = try XCTUnwrap(
+            BodyCompositionCalculator.estimate(
+                weightKg: 78.7,
+                impedanceOhms: 423.9,
+                profile: athleteProfile
+            )
+        )
+        let personalEstimate = try XCTUnwrap(
+            BodyCompositionCalculator.estimate(
+                weightKg: 78.7,
+                impedanceOhms: 423.9,
+                profile: personalProfile
+            )
+        )
+
+        XCTAssertEqual(personalEstimate.fatPercentage, athleteEstimate.fatPercentage, accuracy: 0.0001)
+        XCTAssertEqual(personalEstimate.leanMassKg, athleteEstimate.leanMassKg, accuracy: 0.0001)
     }
 }
